@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://sfhq.xyz/guides/sf-electronic',
     images: [
       {
-        url: 'https://sfhq.xyz/api/og?title=SF Electronic',
+        url: 'https://sfhq.xyz/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'SF Electronic Music Guide',
@@ -24,6 +24,6 @@ export const metadata: Metadata = {
     creator: '@sfhq',
     title: 'SF Electronic | Winter 2025',
     description: 'Your guide to electronic music events in San Francisco - Winter 2025 Edition.',
-    images: ['https://sfhq.xyz/api/og?title=SF Electronic'],
+    images: ['https://sfhq.xyz/og-image.jpg'],
   }
 }; 
