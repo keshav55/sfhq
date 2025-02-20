@@ -3,19 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --sf-orange: #FD5A1E;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
+/* Different gradient speeds */
+.gradient-bg {
+  background: linear-gradient(-45deg, var(--sf-orange), #000000, var(--sf-orange));
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite; /* Slowed down for more subtle movement */
+}
+
+.gradient-bg-fast {
+  animation-duration: 10s;
+}
+
+.gradient-bg-slow {
+  animation-duration: 30s;
+}
+
+/* Add smooth transition when changing speeds */
+.gradient-bg, .gradient-bg-fast, .gradient-bg-slow {
+  animation-timing-function: ease-in-out;
+  transition: background-position 500ms ease;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  margin: 0;
+  padding: 0;
 }
