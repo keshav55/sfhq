@@ -19,7 +19,7 @@ interface EventGroup {
 }
 
 interface EventListProps {
-  content?: string; // Making it optional since we're not using it
+  // No props needed since we're using events.json directly
 }
 
 function InlinePlayer({ url }: { url: string }) {
@@ -45,7 +45,7 @@ function InlinePlayer({ url }: { url: string }) {
   );
 }
 
-export default function EventList({ content }: EventListProps) {
+export default function EventList() {
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const { events: eventGroups } = eventsData;
 
@@ -54,7 +54,7 @@ export default function EventList({ content }: EventListProps) {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-peach-50 backdrop-blur-lg rounded-2xl p-6 shadow-xl relative overflow-hidden"
+        className="bg-zinc-900/50 backdrop-blur-lg rounded-2xl p-6 shadow-xl relative overflow-hidden border border-zinc-800"
       >
         {eventGroups.map((group, groupIndex) => (
           <div key={group.date}>
@@ -62,9 +62,9 @@ export default function EventList({ content }: EventListProps) {
               initial={{ opacity: 0.8 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="sticky top-0 bg-peach-100/90 backdrop-blur-sm z-10 -mx-6 px-6 py-6 border-b border-amber-200/50 mt-12 first:mt-0"
+              className="sticky top-0 bg-zinc-900/90 backdrop-blur-sm z-10 -mx-6 px-6 py-6 border-b border-zinc-800 mt-12 first:mt-0"
             >
-              <h2 className="text-3xl font-medium text-coral-700 tracking-tight">
+              <h2 className="text-3xl font-medium text-zinc-100 tracking-tight">
                 {group.date}
               </h2>
             </motion.div>
@@ -79,19 +79,19 @@ export default function EventList({ content }: EventListProps) {
                     delay: (groupIndex * group.events.length + eventIndex) * 0.05,
                     duration: 0.3
                   }}
-                  className="flex flex-col gap-4 text-amber-700 hover:text-coral-600 transition-colors p-4 -mx-4 rounded-xl hover:bg-peach-100/50"
+                  className="flex flex-col gap-4 text-zinc-300 hover:text-white transition-colors p-4 -mx-4 rounded-xl hover:bg-zinc-800/50"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 leading-relaxed">
                     <div className="flex-1">
-                      <strong className="font-semibold text-xl text-coral-700">
+                      <strong className="font-semibold text-xl text-zinc-100">
                         {event.artist} ({event.genre})
                       </strong>
-                      <div className="text-amber-600 text-lg mt-1">
+                      <div className="text-zinc-400 text-lg mt-1">
                         <a 
                           href={event.mapUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-coral-600 transition-colors inline-flex items-center gap-1"
+                          className="hover:text-white transition-colors inline-flex items-center gap-1"
                         >
                           📍 {event.venue}, {event.address}
                         </a>
@@ -102,7 +102,7 @@ export default function EventList({ content }: EventListProps) {
                         onClick={() => setExpandedEvent(
                           expandedEvent === event.musicUrl ? null : event.musicUrl
                         )}
-                        className="inline-flex items-center px-4 py-2 bg-mustard-600/10 text-mustard-600 hover:text-coral-600 hover:bg-coral-600/10 transition-all focus:outline-none focus:ring-2 focus:ring-coral-500/20 rounded-lg"
+                        className="inline-flex items-center px-4 py-2 bg-zinc-800/50 text-zinc-300 hover:text-white hover:bg-zinc-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-zinc-500/20 rounded-lg"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
                         type="button"
