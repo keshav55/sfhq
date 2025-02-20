@@ -34,4 +34,12 @@ export const metadata: Metadata = {
     description: 'Experience New York City vibes in San Francisco. A curated guide to the best NYC-style spots in SF.',
     images: ['https://sfhq.xyz/ny_cog.jpg'],
   }
-}; 
+};
+
+export default function NYCinSFLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+} 

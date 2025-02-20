@@ -26,4 +26,12 @@ export const metadata: Metadata = {
     description: 'Best food to try in San Francisco - Winter 2025 Edition.',
     images: ['https://sfhq.xyz/venues/cotogna/cotogna1.webp'],
   }
-}; 
+};
+
+export default function RestaurantsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+} 

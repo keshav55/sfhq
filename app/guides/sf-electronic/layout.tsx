@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://sfhq.xyz/guides/sf-electronic',
     images: [
       {
-        url: 'https://sfhq.xyz/og-image.jpg',
+        url: 'https://sfhq.xyz/venues/colddrinks/colddrinks1.jpg',
         width: 1200,
         height: 630,
         alt: 'SF Electronic Music Guide',
@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     creator: '@sfhq',
     title: 'SF Electronic | Winter 2025',
     description: 'Your guide to electronic music events in San Francisco - Winter 2025 Edition.',
-    images: ['https://sfhq.xyz/og-image.jpg'],
+    images: ['https://sfhq.xyz/venues/colddrinks/colddrinks1.jpg'],
   }
-}; 
+};
+
+export default function SFElectronicLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+} 

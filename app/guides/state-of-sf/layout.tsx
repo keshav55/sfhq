@@ -26,4 +26,12 @@ export const metadata: Metadata = {
     description: 'A deep dive into San Francisco\'s renaissance - Winter 2025 Edition.',
     images: ['https://sfhq.xyz/og2.jpg'],
   }
-}; 
+};
+
+export default function StateOfSFLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+} 
