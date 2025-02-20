@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import type { Components } from 'react-markdown';
+import type { HTMLMotionProps } from 'framer-motion';
 
 interface EventListProps {
   content: string;
@@ -67,14 +68,19 @@ export default function EventList({ content }: EventListProps) {
     ul: ({ ...props }) => (
       <ul className="space-y-4 mt-4 mb-8" {...props} />
     ),
-    li: ({ ...props }) => (
-      <motion.li 
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        className="flex flex-col sm:flex-row sm:items-center gap-2 text-zinc-300 hover:text-white transition-colors"
-        {...props}
-      />
-    ),
+    li: ({ children }) => {
+      const motionProps: HTMLMotionProps<"li"> = {
+        initial: { opacity: 0, x: -20 },
+        animate: { opacity: 1, x: 0 },
+        className: "flex flex-col sm:flex-row sm:items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+      };
+
+      return (
+        <motion.li {...motionProps}>
+          {children}
+        </motion.li>
+      );
+    },
     strong: ({ ...props }) => (
       <strong className="font-semibold text-white" {...props} />
     ),
