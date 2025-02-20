@@ -10,7 +10,7 @@ export default async function SFElectronicPage() {
     <main className="min-h-screen bg-gradient-to-b from-zinc-900 to-black text-white">
       <div className="container mx-auto">
         <header className="py-12 text-center">
-          <h1 className="text-4xl font-bold mb-2">SF Electronic Guide</h1>
+          <h1 className="text-4xl font-bold mb-2">Electronic Music in SF</h1>
           <p className="text-zinc-400">Your guide to electronic music events in San Francisco</p>
         </header>
         <EventList content={content} />

@@ -12,8 +12,13 @@ export default function Home() {
             textShadow: '0 0 30px rgba(253, 90, 30, 0.3)'
           }}
         >
-          SF
-          <div className="flex flex-col gap-1">
+          <div className="flex items-end">
+            <div className="relative">
+              SF
+              <span className="absolute bottom-0 right-0 text-[2vw] sm:text-[1.2vw] font-light opacity-60 translate-x-1/4">[hq]</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-1 mt-6">
             <span className="block text-[3vw] sm:text-[1.5vw] font-light tracking-widest mt-2 opacity-80">
               WINTER 2025
             </span>
@@ -32,19 +37,23 @@ export default function Home() {
       {/* Magazine Navigation */}
       <div className="mt-24 sm:mt-32 z-10 flex flex-col gap-8 sm:gap-6 max-w-xs sm:max-w-sm">
         <a 
-          href="/guide"
-          className="group flex items-center gap-4 text-white/80 hover:text-white transition-colors duration-300"
+          href="/guides/sf-electronic"
+          className="group text-white/80 hover:text-white transition-all duration-300 text-base sm:text-lg font-light tracking-wider hover:translate-x-2"
         >
-          <div className="w-8 sm:w-12 h-[1px] bg-current transform origin-left group-hover:scale-x-150 transition-transform duration-300"/>
-          <span className="text-base sm:text-lg font-light tracking-wider">Guide to the City</span>
+          Electronic Music Guide
+        </a>
+        {/* <a 
+          href="/guide"
+          className="group text-white/80 hover:text-white transition-all duration-300 text-base sm:text-lg font-light tracking-wider hover:translate-x-2"
+        >
+          Guide to the City
         </a>
         <a 
           href="/insights"
-          className="group flex items-center gap-4 text-white/80 hover:text-white transition-colors duration-300"
+          className="group text-white/80 hover:text-white transition-all duration-300 text-base sm:text-lg font-light tracking-wider hover:translate-x-2"
         >
-          <div className="w-8 sm:w-12 h-[1px] bg-current transform origin-left group-hover:scale-x-150 transition-transform duration-300"/>
-          <span className="text-base sm:text-lg font-light tracking-wider">Local Insights</span>
-        </a>
+          Local Insights
+        </a> */}
       </div>
     </main>
   );

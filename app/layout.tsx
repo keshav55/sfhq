@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ClientLayout from "./components/ClientLayout";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,17 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SF City Guide | Winter 2025",
+  title: "SF[hq] | Winter 2025",
   description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      }
+    ]
+  },
   openGraph: {
-    title: "SF City Guide | Winter 2025",
+    title: "SF[hq] | Winter 2025",
     description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SF City Guide Winter 2025",
+        alt: "SF[hq] Winter 2025",
       }
     ],
     locale: "en_US",
@@ -31,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SF City Guide | Winter 2025",
+    title: "SF[hq] | Winter 2025",
     description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
     images: ["/og-image.jpg"],
   }
@@ -43,12 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <ClientLayout>{children}</ClientLayout>
     </html>
   );
 }
