@@ -3,6 +3,14 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'NYC in SF | sfhq.xyz',
   description: 'NYC in SF',
+  icons: {
+    icon: [
+      {
+        url: '/nyc_og.jpg',
+        type: 'image/jpeg',
+      }
+    ]
+  },
   openGraph: {
     title: 'NYC in SF',
     description: 'An evening in SF',
