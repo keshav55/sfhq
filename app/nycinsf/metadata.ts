@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'SF[hq]',
     title: 'NYC in SF | Winter 2025',
-    description: 'Experience New York City energy in San Francisco. A curated guide to the best NYC-style spots in SF.',
+    description: 'Experience New York City vibes in San Francisco. A curated guide to the best NYC-style spots in SF.',
     url: 'https://sfhq.xyz/nycinsf',
     images: [
       {
-        url: '/ny_cog.jpg',
+        url: 'https://sfhq.xyz/ny_cog.jpg',
         width: 1200,
         height: 630,
         alt: 'NYC in SF Guide | Winter 2025',
@@ -32,6 +32,6 @@ export const metadata: Metadata = {
     creator: '@sfhq',
     title: 'NYC in SF | Winter 2025',
     description: 'Experience New York City vibes in San Francisco. A curated guide to the best NYC-style spots in SF.',
-    images: ['/ny_cog.jpg'],
+    images: ['https://sfhq.xyz/ny_cog.jpg'],
   }
 }; 
