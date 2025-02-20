@@ -26,24 +26,27 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
+    type: 'website',
+    siteName: 'SF[hq]',
     title: "SF[hq] | Winter 2025",
     description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
+    url: 'https://sfhq.xyz',
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og2.jpg",
         width: 1200,
         height: 630,
         alt: "SF[hq] Winter 2025",
       }
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "SF[hq] | Winter 2025",
     description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
-    images: ["/og-image.jpg"],
+    site: "@sfhq",
+    creator: "@sfhq",
+    images: ["/og2.jpg"],
   }
 };
 
