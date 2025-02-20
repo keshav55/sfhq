@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Winter 2025 | sfhq.xyz',
-  description: 'Delivered Quietly',
+  title: 'NYC in SF | sfhq.xyz',
+  description: 'NYC in SF',
   openGraph: {
-    title: 'Winter 2025 | sfhq.xyz',
-    description: 'Delivered Quietly',
+    title: 'NYC in SF',
+    description: 'An evening in SF',
     images: [
       {
         url: '/api/og',

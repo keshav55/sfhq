@@ -3,49 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
-  --sf-orange: #FD5A1E;
+  --foreground-rgb: 44, 49, 51; /* Dark fog */
+  --background-rgb: 230, 233, 235; /* Light fog */
+  --sf-fog-light: #E6E9EB;
+  --sf-fog-medium: #C4CCD0;
+  --sf-fog-dark: #94A1A6;
+  --sf-orange: #FD5A1E; /* International Orange (Golden Gate) */
 }
 
-/* Noise texture */
+/* Enhanced noise texture for fog effect */
 .noise-texture {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.05;
+  opacity: 0.2;
   mix-blend-mode: overlay;
+  animation: fogFloat 30s ease infinite;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
+@keyframes fogFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    transform: translateY(-1%) scale(1.01);
   }
 }
 
-/* Different gradient speeds */
-.gradient-bg {
-  background: linear-gradient(-45deg, var(--sf-orange), #000000, var(--sf-orange));
-  background-size: 400% 400%;
-  animation: gradientAnimation 20s ease infinite; /* Slowed down for more subtle movement */
-}
-
-.gradient-bg-fast {
-  animation-duration: 10s;
-}
-
-.gradient-bg-slow {
-  animation-duration: 30s;
-}
-
-/* Add smooth transition when changing speeds */
-.gradient-bg, .gradient-bg-fast, .gradient-bg-slow {
-  animation-timing-function: ease-in-out;
-  transition: background-position 500ms ease;
+/* Ensure text has good contrast */
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }
 
 body {
@@ -53,4 +44,5 @@ body {
   background: rgb(var(--background-rgb));
   margin: 0;
   padding: 0;
+  font-feature-settings: "salt" 1, "ss01" 1, "ss02" 1;
 }
