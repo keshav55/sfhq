@@ -77,35 +77,35 @@ export default function NYCinSFPage() {
   // Show password screen if not authenticated
   if (!isAuthenticated) {
     return (
-      <main className="relative min-h-screen w-full overflow-hidden gradient-bg">
+      <main className="relative min-h-screen w-full overflow-hidden bg-[#3D1D14]">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full max-w-md p-8">
-            <div className="text-center mb-12">
-              <h1 className="text-[8vw] sm:text-7xl font-bold text-[#FD5A1E] mix-blend-difference mb-2">
+          <div className="w-full max-w-md px-8">
+            <div className="text-center mb-16">
+              <h1 className="text-[15vw] sm:text-[120px] font-bold text-[#FD5A1E] opacity-90">
                 SF
               </h1>
             </div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-black/20 backdrop-blur-sm border border-white/10 
-                          rounded-lg text-white placeholder-white/50 focus:outline-none 
-                          focus:border-[#FD5A1E] transition-all duration-300"
+                className="w-full px-6 py-4 bg-transparent border-0 border-b border-[#FD5A1E]/30
+                          text-[#FD5A1E] placeholder-[#FD5A1E]/50 focus:outline-none focus:border-[#FD5A1E]
+                          transition-all duration-300 text-lg"
                 placeholder="Enter password"
                 autoFocus
               />
               <button
                 type="submit"
-                className="w-full px-4 py-3 bg-[#FD5A1E] text-white rounded-lg
+                className="w-full px-6 py-4 bg-[#FD5A1E] text-white rounded-lg
                           hover:bg-[#FD5A1E]/90 transition-all duration-300
-                          font-medium"
+                          text-lg font-normal mt-8"
               >
                 Enter
               </button>
               {error && (
-                <p className="text-red-500 text-center mt-2 text-sm">
+                <p className="text-[#FD5A1E] text-center mt-4 text-sm">
                   {error}
                 </p>
               )}
@@ -126,81 +126,106 @@ export default function NYCinSFPage() {
       </div>
 
       {/* Title Section */}
-      <div className="relative z-10 pt-16 pb-24 px-6 sm:px-8">
+      <div className="relative z-10 pt-16 pb-12 px-6 sm:px-8">
         <h1 className="text-center">
           <span className="block text-[12vw] sm:text-8xl font-bold text-[#FD5A1E] mb-4 hover:text-white/90 transition-colors duration-500">
             NYC in SF
-          </span>
-          <span className="block text-2xl sm:text-3xl font-light text-white/80 tracking-wider">
-            A TALE OF TWO CITIES
           </span>
         </h1>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 space-y-24">
-        {/* Intro Section */}
-        <section className="prose prose-lg prose-invert mx-auto">
-          <p className="text-xl sm:text-2xl font-light leading-relaxed text-white/90">
-            Where East Coast energy meets West Coast innovation. Discover the unexpected parallels 
-            and beautiful contrasts between these iconic cities, curated through a San Franciscan lens.
+      <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 pb-24">
+        <article className="prose prose-lg prose-invert mx-auto">
+          <p className="text-xl sm:text-2xl font-light leading-relaxed text-white/90 mb-12">
+            NYC energy is a mix of effortless nightlife, an electric atmosphere, and food that sets the scene. 
+            It's always a combination of being well-dressed, classy cocktails, a great Italian meal, and walking through the night with energy. 
+            That's the formula. And San Francisco is so back—if you know where to look.
           </p>
-        </section>
 
-        {/* Image Left + Text Right Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-[4/3] bg-black/30 rounded-lg overflow-hidden">
-            {/* Image placeholder - we'll add actual images later */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FD5A1E]/10 to-black/30" />
-          </div>
-          <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Cultural Fusion</h2>
-            <p className="text-lg text-white/80 leading-relaxed">
-              From the bustling streets of Manhattan to the hills of San Francisco, 
-              discover how these cities blend their unique characteristics into something entirely new.
+          <h2 className="text-2xl font-medium text-white mt-16 mb-8">The Itinerary: A Perfect NYC-Inspired Night in SF</h2>
+
+          {/* Verjus Section */}
+          <div className="space-y-6 mb-16">
+            <h3 className="text-xl font-medium text-[#FD5A1E]">1. SF Is So Back – Verjus</h3>
+            <p className="text-white/80">
+              This spot was shut down for a few years, but it's back, and the energy is real. Originally started by the all-star crew behind Quince, 
+              Verjus was the spot for intern season 2019, and yeah—great skin-contact wine. It feels like a natural wine bar straight out of West Village—small plates, 
+              great pours, and the kind of place where you start the night and forget to leave.
             </p>
-          </div>
-        </section>
-
-        {/* Text Left + Image Right Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 order-2 md:order-1">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Urban Rhythms</h2>
-            <p className="text-lg text-white/80 leading-relaxed">
-              Experience the parallel pulses of two cities that never sleep, 
-              each with its own tempo but moving to a similarly energetic beat.
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] bg-black/30 order-1 md:order-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FD5A1E]/20 to-black/30" />
-          </div>
-        </section>
-
-        {/* Image Left + Text Right Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-[4/3] bg-black/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FD5A1E]/20 to-black/30" />
-          </div>
-          <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Future Forward</h2>
-            <p className="text-lg text-white/80 leading-relaxed">
-              Two cities at the forefront of innovation, each charting the course 
-              for what urban life will look like in the decades to come.
-            </p>
-          </div>
-        </section>
-
-        {/* Spotify Embed Section */}
-        <section className="py-12">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-light text-white/80 text-center mb-8">
-              THE SOUNDS OF TWO CITIES
-            </h2>
-            <div className="aspect-[16/9] bg-black/20 rounded-lg">
-              {/* Spotify embed placeholder - we'll add the actual embed later */}
+            <div className="flex gap-4 text-sm">
+              <a href="https://www.instagram.com/verjus_sf/?hl=en" target="_blank" rel="noopener noreferrer" 
+                className="text-[#FD5A1E] hover:text-white transition-colors">@verjus_sf</a>
+              <a href="https://www.theinfatuation.com/san-francisco/reviews/verjus" target="_blank" rel="noopener noreferrer"
+                className="text-[#FD5A1E] hover:text-white transition-colors">Read Review</a>
+            </div>
+            <div className="text-sm text-white/60">
+              <p>🗽 NYC Equivalent: Stafilli Wine (West Village), Sauced (East Village)</p>
+              <p>🌉 SF Alternative: Bar Sprezzatura</p>
             </div>
           </div>
-        </section>
+
+          {/* Cotogna Section */}
+          <div className="space-y-6 mb-16">
+            <h3 className="text-xl font-medium text-[#FD5A1E]">2. Italian Forever – Cotogna</h3>
+            <p className="text-white/80">
+              Italian food is non-negotiable for a perfect night. Cotogna is the Rezdora-Torrisi crossover SF needed—warm lighting, 
+              handmade pastas, crispy focaccia, and fire-kissed meats. If you're debating what to order, get the agnolotti and wood-grilled steak. 
+              It's got that old-school Italian magic with a modern SF touch.
+            </p>
+            <div className="flex gap-4 text-sm">
+              <a href="https://www.instagram.com/cotogna_sf/?hl=en" target="_blank" rel="noopener noreferrer"
+                className="text-[#FD5A1E] hover:text-white transition-colors">@cotogna_sf</a>
+              <a href="https://www.theinfatuation.com/san-francisco/reviews/cotogna" target="_blank" rel="noopener noreferrer"
+                className="text-[#FD5A1E] hover:text-white transition-colors">Read Review</a>
+            </div>
+            <div className="text-sm text-white/60">
+              <p>🗽 NYC Equivalent: Rezdora (Midtown), Torrisi (Little Italy)</p>
+              <p>🌉 SF Alternative: Tony's Pizza Napoletana (#2 in the US)—and yeah, it's that good.</p>
+            </div>
+          </div>
+
+          {/* Cold Drinks Bar Section */}
+          <div className="space-y-6 mb-16">
+            <h3 className="text-xl font-medium text-[#FD5A1E]">3. A Classy Speakeasy – Cold Drinks Bar</h3>
+            <p className="text-white/80">
+              You need a late-night spot with mystery, a little Chinatown intrigue, and upscale cocktail energy. Cold Drinks Bar delivers on all fronts. 
+              It's giving slight Chinatown, but with that polished cocktail fusion, straight out of a movie. You walk in, and suddenly it's La La Land 
+              with a Blade Runner twist. This is why you gotta dress up—velvet booths, moody lighting, and a cocktail in hand? Flawless.
+            </p>
+            <div className="flex gap-4 text-sm">
+              <a href="https://www.instagram.com/colddrinksbar/" target="_blank" rel="noopener noreferrer"
+                className="text-[#FD5A1E] hover:text-white transition-colors">@colddrinksbar</a>
+              <a href="https://www.theinfatuation.com/san-francisco/reviews/cold-drinks-bar" target="_blank" rel="noopener noreferrer"
+                className="text-[#FD5A1E] hover:text-white transition-colors">Read Review</a>
+            </div>
+            <div className="text-sm text-white/60">
+              <p>🗽 NYC Equivalent: Attaboy (Lower East Side), Ye's Apothecary (Williamsburg)</p>
+              <p>🌉 SF Alternative: Moongate Lounge (Sleek, upstairs Chinatown vibes)</p>
+            </div>
+          </div>
+
+          {/* Bonus Section */}
+          <div className="space-y-6 mb-16">
+            <h3 className="text-xl font-medium text-white">Bonus NYC Moves</h3>
+            <p className="text-white/80">Want to go deeper into the energy? Add one (or all) of these:</p>
+            <ul className="list-none space-y-3 text-white/80">
+              <li>🎤 Comedy Night → Cobb's or Punch Line for a classic NYC-style stand-up set.</li>
+              <li>🌆 Views at Top of the Mark → A skyline moment, just like an NYC rooftop.</li>
+              <li>💃 Dance at Bar Part Time → House music, dim lights, late-night movement.</li>
+              <li>🛤️ Stroll North Beach → SF's Greenwich Village moment.</li>
+            </ul>
+          </div>
+
+          {/* Verdict Section */}
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <h3 className="text-xl font-medium text-white mb-4">The Verdict?</h3>
+            <p className="text-white/80">
+              The NYC formula works anywhere—all you need is a good wine bar, a great Italian meal, and a proper speakeasy. 
+              San Francisco delivers its own version, and if you hit the right spots, you feel that pulse.
+            </p>
+          </div>
+        </article>
       </div>
     </main>
   );

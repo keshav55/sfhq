@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sfhq.xyz'),
   title: "SF[hq] | Winter 2025",
   description: "Your essential guide to San Francisco - Edition 01, Winter 2025. Featuring local insights and city guides.",
   icons: {

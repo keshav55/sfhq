@@ -5,7 +5,7 @@ export const runtime = 'edge';
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const title = searchParams.get('title') || 'SF City Guide';
+    const title = searchParams.get('title') || 'Winter 2025';
 
     return new ImageResponse(
       (
@@ -17,8 +17,7 @@ export async function GET(request: Request) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'black',
-            background: 'linear-gradient(45deg, #FD5A1E, black)',
+            backgroundColor: '#3D1D14',
           }}
         >
           <div
@@ -26,23 +25,33 @@ export async function GET(request: Request) {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              gap: '20px',
             }}
           >
-            <span style={{ 
+            <div style={{ 
               fontSize: 120, 
               color: '#FD5A1E',
               fontWeight: 'bold',
-              marginBottom: 20,
+              opacity: 0.9,
             }}>
               SF
-            </span>
-            <span style={{ 
-              fontSize: 60, 
-              color: 'white',
-              fontWeight: 'normal',
+            </div>
+            <div style={{ 
+              fontSize: 32, 
+              color: '#FD5A1E',
+              opacity: 0.6,
+              letterSpacing: '0.1em',
             }}>
               {title}
-            </span>
+            </div>
+            <div style={{ 
+              fontSize: 24, 
+              color: '#FD5A1E',
+              opacity: 0.4,
+              marginTop: '10px',
+            }}>
+              sfhq.xyz
+            </div>
           </div>
         </div>
       ),
