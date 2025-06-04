@@ -9,16 +9,15 @@ export default function Home() {
       {/* Mesh Gradient Background */}
       <div className="absolute inset-0 -z-10">
         <MeshGradient
-          color1="#A3ADB3" // Darker fog gray
-          color2="#D8DDE0" // Less bright light fog
-          color3="#FD5A1E" // International Orange (Golden Gate)
-          color4="#7A8589" // Deeper misty gray
+          color1="#FFE4B5" // Warm sand
+          color2="#87CEEB" // Sky blue
+          color3="#FF6B6B" // Sunset coral
+          color4="#98D8C8" // Mint seafoam
           speed={0.08}
           style={{ width: '100%', height: '100%' }}
         />
         {/* Additional fog texture overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent mix-blend-soft-light" />
-        <div className="absolute inset-0 noise-texture" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent mix-blend-soft-light" />
       </div>
 
       {/* Initial fog reveal animation */}
@@ -77,18 +76,18 @@ export default function Home() {
         style={{ marginLeft: 'calc(2vw + 1rem)' }}
       >
         <div className="flex items-baseline gap-3">
-          <span className="text-[3.2vw] sm:text-[1.8vw] font-medium tracking-wider text-[#FD5A1E]">
-            Winter 2025
+          <span className="text-[3.2vw] sm:text-[1.8vw] font-medium tracking-wider text-[#FF6B6B]">
+            Summer 2025
           </span>
         </div>
 
         <div className="flex flex-col gap-8 sm:gap-6 pl-8">
           <a 
-            href="/guides/sf-electronic"
+            href="/guides/coffee"
             className="group text-[#2C3133] hover:text-[#1a1d1f] transition-all duration-300 text-lg sm:text-xl font-medium tracking-wider hover:translate-x-2"
           >
             <span className="relative inline-block">
-              Electronic
+              Coffee
               <span className="absolute inset-0 bg-white/20 blur-sm -z-10" />
             </span>
           </a>
@@ -102,11 +101,11 @@ export default function Home() {
             </span>
           </a>
           <a 
-            href="/guides/state-of-sf"
+            href="/events"
             className="group text-[#2C3133] hover:text-[#1a1d1f] transition-all duration-300 text-lg sm:text-xl font-medium tracking-wider hover:translate-x-2"
           >
             <span className="relative inline-block">
-              SF Has Been Back
+              Events
               <span className="absolute inset-0 bg-white/20 blur-sm -z-10" />
             </span>
           </a>

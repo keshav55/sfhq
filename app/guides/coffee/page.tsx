@@ -3,87 +3,73 @@
 import { useState } from 'react';
 import HomeButton from '@/app/components/HomeButton';
 
-interface Restaurant {
+interface CoffeeSpot {
   name: string;
   neighborhood: string;
   vibe: string;
   specialty: string;
   bestTime: string;
+  insider?: string;
 }
 
-const restaurants: Restaurant[] = [
+const coffeeSpots: CoffeeSpot[] = [
   {
-    name: "Tiya",
-    neighborhood: "Marina",
-    vibe: "Modern Indian energy",
-    specialty: "Tandoori lamb chops & cocktails",
-    bestTime: "8pm dinner"
+    name: "Saint Frank Coffee",
+    neighborhood: "Russian Hill",
+    vibe: "Minimalist sanctuary",
+    specialty: "Single origin pour-overs",
+    bestTime: "7am weekdays",
+    insider: "Ask for the off-menu Gibraltar"
   },
   {
-    name: "Chisai Sushi Club",
-    neighborhood: "Noe Valley",
-    vibe: "8-seat speakeasy",
-    specialty: "Omakase only",
-    bestTime: "Early or late seating"
+    name: "Sightglass Coffee",
+    neighborhood: "SoMa",
+    vibe: "Industrial cathedral",
+    specialty: "In-house roasting",
+    bestTime: "2pm for cupping sessions",
+    insider: "The affogato bar is hidden upstairs"
   },
   {
-    name: "El Buen Comer",
-    neighborhood: "Mission",
-    vibe: "No-frills authenticity",
-    specialty: "Carnitas & fresh bolillos",
-    bestTime: "Weekend mornings"
+    name: "Mazarine Coffee",
+    neighborhood: "Financial District",
+    vibe: "Urban oasis",
+    specialty: "Kyoto cold brew",
+    bestTime: "Late afternoon",
+    insider: "They keep rare beans under the counter"
   },
   {
-    name: "Deli Board",
-    neighborhood: "SOMA",
-    vibe: "Punk rock sandwiches",
-    specialty: "Daily special board",
-    bestTime: "Before noon"
+    name: "Réveille Coffee",
+    neighborhood: "Castro",
+    vibe: "Neighborhood charm",
+    specialty: "Breakfast toasts",
+    bestTime: "Weekend mornings",
+    insider: "The cortado comes with house-made almond croissant"
   },
   {
-    name: "Cotogna",
-    neighborhood: "Jackson Square",
-    vibe: "Rustic Italian warmth",
-    specialty: "Wood-fired everything",
-    bestTime: "Late lunch"
+    name: "Flywheel Coffee",
+    neighborhood: "Golden Gate Heights",
+    vibe: "Local's secret",
+    specialty: "Ethiopian naturals",
+    bestTime: "Foggy mornings",
+    insider: "Cash only, but worth it"
   },
   {
-    name: "Verjus",
-    neighborhood: "Japantown",
-    vibe: "Wine cave intimacy",
-    specialty: "Natural wines & small plates",
-    bestTime: "Happy hour"
-  },
-  {
-    name: "State Bird Provisions",
-    neighborhood: "Fillmore",
-    vibe: "Dim sum meets California",
-    specialty: "The state bird with provisions",
-    bestTime: "5:30pm sharp"
-  },
-  {
-    name: "Rich Table",
-    neighborhood: "Hayes Valley",
-    vibe: "Playful fine dining",
-    specialty: "Sardine chips & porcini donuts",
-    bestTime: "Weeknight reservations"
-  },
-  {
-    name: "Rintaro",
-    neighborhood: "Mission",
-    vibe: "Izakaya perfection",
-    specialty: "Yakitori & seasonal small plates",
-    bestTime: "Early evening"
+    name: "Coffee Movement",
+    neighborhood: "Nob Hill",
+    vibe: "Taiwanese-inspired",
+    specialty: "Sea salt coffee",
+    bestTime: "Afternoon break",
+    insider: "Try the coffee with their pineapple cake"
   }
 ];
 
-export default function RestaurantsPage() {
+export default function CoffeePage() {
   const [selectedNeighborhood, setSelectedNeighborhood] = useState<string>('all');
   
-  const neighborhoods = ['all', ...new Set(restaurants.map(spot => spot.neighborhood))];
+  const neighborhoods = ['all', ...new Set(coffeeSpots.map(spot => spot.neighborhood))];
   const filteredSpots = selectedNeighborhood === 'all' 
-    ? restaurants 
-    : restaurants.filter(spot => spot.neighborhood === selectedNeighborhood);
+    ? coffeeSpots 
+    : coffeeSpots.filter(spot => spot.neighborhood === selectedNeighborhood);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-amber-50 text-stone-900">
@@ -91,8 +77,8 @@ export default function RestaurantsPage() {
       
       <div className="max-w-4xl mx-auto px-4 py-16">
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-light mb-4">Restaurants</h1>
-          <p className="text-stone-600">Where to eat this summer</p>
+          <h1 className="text-5xl font-light mb-4">Coffee</h1>
+          <p className="text-stone-600">Summer mornings done right</p>
         </header>
 
         {/* Neighborhood Filter */}
@@ -112,7 +98,7 @@ export default function RestaurantsPage() {
           ))}
         </div>
 
-        {/* Restaurant List */}
+        {/* Coffee Spots */}
         <div className="grid gap-6">
           {filteredSpots.map((spot, index) => (
             <div
@@ -125,8 +111,11 @@ export default function RestaurantsPage() {
                   <p className="text-stone-600 text-sm mb-3">{spot.neighborhood} · {spot.vibe}</p>
                   
                   <div className="space-y-1 text-sm">
-                    <p><span className="font-medium">Go for:</span> {spot.specialty}</p>
+                    <p><span className="font-medium">Known for:</span> {spot.specialty}</p>
                     <p><span className="font-medium">Best time:</span> {spot.bestTime}</p>
+                    {spot.insider && (
+                      <p className="text-stone-500 italic">Insider tip: {spot.insider}</p>
+                    )}
                   </div>
                 </div>
                 
