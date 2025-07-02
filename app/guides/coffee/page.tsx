@@ -16,50 +16,50 @@ const coffeeSpots: CoffeeSpot[] = [
   {
     name: "Saint Frank Coffee",
     neighborhood: "Russian Hill",
-    vibe: "Minimalist sanctuary",
+    vibe: "Minimalist design",
     specialty: "Single origin pour-overs",
-    bestTime: "7am weekdays",
-    insider: "Ask for the off-menu Gibraltar"
+    bestTime: "Early mornings",
+    insider: "They focus on direct relationships with coffee farmers"
   },
   {
     name: "Sightglass Coffee",
     neighborhood: "SoMa",
-    vibe: "Industrial cathedral",
+    vibe: "Industrial roastery",
     specialty: "In-house roasting",
-    bestTime: "2pm for cupping sessions",
-    insider: "The affogato bar is hidden upstairs"
-  },
-  {
-    name: "Mazarine Coffee",
-    neighborhood: "Financial District",
-    vibe: "Urban oasis",
-    specialty: "Kyoto cold brew",
-    bestTime: "Late afternoon",
-    insider: "They keep rare beans under the counter"
+    bestTime: "Weekday afternoons",
+    insider: "Watch the roasting process in their open production space"
   },
   {
     name: "Réveille Coffee",
-    neighborhood: "Castro",
-    vibe: "Neighborhood charm",
-    specialty: "Breakfast toasts",
+    neighborhood: "Lower Haight",
+    vibe: "Neighborhood cafe",
+    specialty: "House-roasted coffee & breakfast",
     bestTime: "Weekend mornings",
-    insider: "The cortado comes with house-made almond croissant"
+    insider: "Multiple locations across SF - check their Berkeley spot too"
   },
   {
     name: "Flywheel Coffee",
-    neighborhood: "Golden Gate Heights",
-    vibe: "Local's secret",
-    specialty: "Ethiopian naturals",
-    bestTime: "Foggy mornings",
-    insider: "Cash only, but worth it"
+    neighborhood: "Haight-Ashbury",
+    vibe: "Local roaster",
+    specialty: "Small batch roasting",
+    bestTime: "Morning coffee run",
+    insider: "Independent roaster with a focus on quality"
   },
   {
     name: "Coffee Movement",
     neighborhood: "Nob Hill",
-    vibe: "Taiwanese-inspired",
-    specialty: "Sea salt coffee",
-    bestTime: "Afternoon break",
-    insider: "Try the coffee with their pineapple cake"
+    vibe: "Specialty coffee bar",
+    specialty: "Coffee tasting experiences",
+    bestTime: "Afternoon visits",
+    insider: "Book their weekly coffee experience for an omakase-style tasting"
+  },
+  {
+    name: "Four Barrel Coffee",
+    neighborhood: "Mission",
+    vibe: "Valencia Street staple",
+    specialty: "Artisanal coffee program",
+    bestTime: "Mid-morning",
+    insider: "Check out their rotating art exhibitions"
   }
 ];
 
